@@ -8,16 +8,16 @@ gpu_ids: [1]
 
 datasets:
   test_1:  # the 1st test dataset
-    name: dataset_dame
+    name: CUFED5
     type: RefCUFEDDataset
-    dataroot_in: path-to-input-data
-    dataroot_ref: path-to-input-data
+    dataroot_in: ./datasets/CUFED5
+    dataroot_ref: ./datasets/CUFED5
     io_backend:
       type: disk
 
     bicubic_model: PIL
 
-    ann_file: path-to-ann-files
+    ann_file: ./datasets/CUFED5_pairs.txt
 
 val_func: BasicSRValidation
 save_img: true
