@@ -1,23 +1,9 @@
-# C2-Matching (CVPR2021)
+# C2-Matching (CVPR2021) CUDA11 version
 
 This repository is based on [C2-Matching](https://github.com/yumingj/C2-Matching), I made some modifications to run on CUDA11(CUDA11.3 and CUDA 11.6 was tested to work) as follows:
 + Replace all `AT_CHECK` with `TORCH_CHECK` in mmsr/models/archs/dcn/src/deform_conv_cuda.cpp
 + Replace mmsr/models/archs/DCNv2/ with a new implementation [DCNv2_latest](https://github.com/lucasjinreal/DCNv2_latest)
   + Add  `class DCN_sep_pre_multi_offset(DCNv2)` in line 194 of dcn_v2.py, which came from line 187 ~ 253 of [dcn_v2.py](https://github.com/yumingj/C2-Matching/blob/master/mmsr/models/archs/DCNv2/dcn_v2.py)
-
-This repository contains the implementation of the following paper:
-> **Robust Reference-based Super-Resolution via C2-Matching**<br>
-> Yuming Jiang, Kelvin C.K. Chan, Xintao Wang, Chen Change Loy, Ziwei Liu<br>
-> IEEE Conference on Computer Vision and Pattern Recognition (**CVPR**), 2021<br>
-
-[[Paper](https://arxiv.org/abs/2106.01863)]
-[[Project Page](https://yumingj.github.io/projects/C2_matching)]
-[[WR-SR Dataset](https://drive.google.com/drive/folders/1Pt7blJA2cK4oQ6yWB9tcHerZ4pwICmxp?usp=sharing)]
-
-## Overview
-![overall_structure](./assets/framework.png)
-
-
 
 ## Dependencies and Installation
 The following two environments were tested to work:
@@ -55,6 +41,20 @@ and
     cd mmsr/models/archs/DCNv2
     python setup.py build develop
     ```
+
+This repository contains the implementation of the following paper:
+> **Robust Reference-based Super-Resolution via C2-Matching**<br>
+> Yuming Jiang, Kelvin C.K. Chan, Xintao Wang, Chen Change Loy, Ziwei Liu<br>
+> IEEE Conference on Computer Vision and Pattern Recognition (**CVPR**), 2021<br>
+
+[[Paper](https://arxiv.org/abs/2106.01863)]
+[[Project Page](https://yumingj.github.io/projects/C2_matching)]
+[[WR-SR Dataset](https://drive.google.com/drive/folders/1Pt7blJA2cK4oQ6yWB9tcHerZ4pwICmxp?usp=sharing)]
+
+## Overview
+![overall_structure](./assets/framework.png)
+
+
 
 ## Dataset Preparation
 
