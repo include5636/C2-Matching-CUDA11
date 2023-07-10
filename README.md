@@ -1,7 +1,8 @@
 # C2-Matching (CVPR2021)
 
-![Python 3.7](https://img.shields.io/badge/python-3.7-green.svg?style=plastic)
-![pytorch 1.4.0](https://img.shields.io/badge/pytorch-1.4.0-green.svg?style=plastic)
+This repository is based on [C2-Matching](https://github.com/yumingj/C2-Matching), I made some modifications to run on CUDA11(CUDA11.3 and CUDA 11.6 was tested to work)
++ replace all `AT_CHECK` with `TORCH_CHECK` in mmsr/models/archs/dcn/src/deform_conv_cuda.cpp
++ replace mmsr/models/archs/DCNv2/ with a new implementation [DCNv2_latest](https://github.com/lucasjinreal/DCNv2_latest)
 
 This repository contains the implementation of the following paper:
 > **Robust Reference-based Super-Resolution via C2-Matching**<br>
@@ -18,42 +19,41 @@ This repository contains the implementation of the following paper:
 
 
 ## Dependencies and Installation
+The following two environments were tested to work:
 
-- Python >= 3.7
-- PyTorch >= 1.4
-- CUDA 10.0 or CUDA 10.1
-- GCC 5.4.0
+- Ubuntu 20.04
+- Python 3.8
+- PyTorch 1.11.0
+- CUDA 11.3
+
+and
+
+- Ubuntu 20.04
+- Python 3.8
+- PyTorch 1.13.1
+- CUDA 11.6
+  
 
 1. Clone Repo
 
    ```bash
-   git clone git@github.com:yumingj/C2-Matching.git
+   git clone https://github.com/include5636/C2-Matching-CUDA11.git
    ```
 
-1. Create Conda Environment
+1. Install mmcv
 
    ```bash
-   conda create --name c2_matching python=3.7
-   conda activate c2_matching
-   ```
-
-1. Install Dependencies
-
-   ```bash
-   cd C2-Matching
-   conda install pytorch=1.4.0 torchvision cudatoolkit=10.0 -c pytorch
    pip install mmcv==0.4.4
-   pip install -r requirements.txt
    ```
 
 1. Install MMSR and DCNv2
 
     ```bash
+    cd C2-Matching-CUDA11
     python setup.py develop
     cd mmsr/models/archs/DCNv2
     python setup.py build develop
     ```
-
 
 ## Dataset Preparation
 
