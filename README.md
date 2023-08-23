@@ -1,6 +1,6 @@
 # C2-Matching (CVPR2021) CUDA11 version
 
-This repository is based on [C2-Matching](https://github.com/yumingj/C2-Matching), I made some modifications to run on CUDA11(CUDA11.3 and CUDA 11.6 was tested to work) as follows:
+This repository is based on [C2-Matching](https://github.com/yumingj/C2-Matching), I made some modifications to run on CUDA11(CUDA11.3 and CUDA 11.6 were tested to work) as follows:
 + Replace all `AT_CHECK` with `TORCH_CHECK` in mmsr/models/archs/dcn/src/deform_conv_cuda.cpp
 + Replace mmsr/models/archs/DCNv2/ with a new implementation [DCNv2_latest](https://github.com/lucasjinreal/DCNv2_latest)
   + Add  `class DCN_sep_pre_multi_offset(DCNv2)` in line 194 of dcn_v2.py, which came from line 187 ~ 253 of [dcn_v2.py](https://github.com/yumingj/C2-Matching/blob/master/mmsr/models/archs/DCNv2/dcn_v2.py)
