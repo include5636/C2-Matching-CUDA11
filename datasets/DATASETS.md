@@ -28,7 +28,7 @@ datasets:
 
     bicubic_model: PIL
 
-    ann_file: ../datasets/CUFED5_pairs.txt
+    ann_file: ./datasets/CUFED5_pairs.txt
 ```
 
 ### Prepare WR-SR dataset
